@@ -32,3 +32,4 @@ def get_filtered_image(image, action):
         filterd = cv2.bitwise_not(img)
 
     return filterd
+
