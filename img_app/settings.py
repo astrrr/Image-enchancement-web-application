@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'uploads',
     'gammas',
     'histogram_equalization',
+    'histogram_matching',
 ]
 
 MIDDLEWARE = [
