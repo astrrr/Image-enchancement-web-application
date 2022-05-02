@@ -32,7 +32,9 @@ ACTION_CHOICES =(
 
 class Gamma(models.Model):
     image = models.ImageField(upload_to='images')
-    gamma = models.CharField(max_length=50, choices=ACTION_CHOICES)
+    gamma = models.CharField(max_length=10)
+    a = models.CharField(max_length=10, default='1')
+    b = models.CharField(max_length=10, default='0')
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
@@ -53,7 +55,7 @@ class Gamma(models.Model):
         #img = get_filtered_image(cv_img, self.action)
 
         # gamma
-        img = get_gamma_image(np.array(pil_img), self.gamma)
+        img = get_gamma_image(np.array(pil_img), self.gamma, self.a, self.b)
 
         # convert back to pil img
         im_pil = Image.fromarray(img)
